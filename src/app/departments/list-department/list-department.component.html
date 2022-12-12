@@ -1,0 +1,63 @@
+<div id="content" #content> 
+  <h1>List Department</h1>
+
+<!--   <input
+  type="number"
+  aria-labelledby="temperature low"
+  #myInput
+  [(ngModel)]="idDepart"
+  (input)="recherche(idDepart)"
+/> -->
+
+
+<a class="btn btn-sm btn-warning" (click)="toadd()">
+    Add Department  
+</a>
+  <table class="table">
+      <thead>
+          <tr>
+             <th>ID</th>
+              <th>Nom Department</th>
+              <th>Code</th>
+              <th>type</th>
+           
+              <th>description</th>
+              <th>Universite</th>
+       
+              <th>action</th>
+          </tr>
+      </thead>
+      <tbody>
+    
+          <tr *ngFor="let u of listDepartment ">
+    
+              <td>{{u?.idDepartement}}</td>
+              <td>{{u?.code }}</td>
+              <td>{{u?.nomDepartement }}</td>
+             
+              <td > {{u?.type}} </td>
+              
+             
+              <td > {{u?.description}}</td>
+             
+                 
+              <td > {{u?.universite?.nomUniversite}}</td>
+              <td>
+                  <button class="btn btn-sm btn-danger" (click)="deletedepartment(u.idDepartement)" >
+                      delete
+                  </button>
+                  &nbsp; 
+                  <a class="btn btn-sm btn-warning" (click)="getEtudiantdep()">
+                    Show  
+                </a> 
+                
+                  <a class="btn btn-sm btn-warning" (click)=" exportToPDF()">
+                    PDF  
+                </a>
+                &nbsp;
+              </td>
+          </tr>
+      </tbody>
+  </table>
+ 
+  </div>
